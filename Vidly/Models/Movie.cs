@@ -6,6 +6,7 @@ namespace Vidly.Models
     public class Movie
     {
         public int ID { get; set; }
+
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
@@ -18,6 +19,7 @@ namespace Vidly.Models
         public DateTime ReleaseDate { get; set; }
 
         [Required]
+        [Range(1,20)]
         [Display(Name = "Number in Stock")]
         public int NumberInStock { get; set; }
 

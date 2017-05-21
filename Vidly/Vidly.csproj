@@ -249,6 +249,10 @@
     <Compile Include="Migrations\201705211308295_AddDataAnnotations.Designer.cs">
       <DependentUpon>201705211308295_AddDataAnnotations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705211540099_TweakDBName.cs" />
+    <Compile Include="Migrations\201705211540099_TweakDBName.Designer.cs">
+      <DependentUpon>201705211540099_TweakDBName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -260,6 +264,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -322,6 +327,7 @@
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Movie\detail.cshtml" />
     <Content Include="Views\Customer\CustomerForm.cshtml" />
+    <Content Include="Views\Movie\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -386,6 +392,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705211308295_AddDataAnnotations.resx">
       <DependentUpon>201705211308295_AddDataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705211540099_TweakDBName.resx">
+      <DependentUpon>201705211540099_TweakDBName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

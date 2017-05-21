@@ -25,32 +25,14 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
-        // GET: Movies
-        public ActionResult Random()
-        {
-            var movie = new Movie() { Name = "Shreks!"};
-            var customers = new List<Customer>
-            {
-                new Customer {Name = "Martin Johnson"},
-                new Customer {Name = "Johnny Wilkonson"}
-            };
+        
 
-            var viewModel = new RandomMovieViewModel()
-            {
-                Movie = movie,
-                Customers = customers
-            };
-            
-            return View(viewModel);
-        }
-
-       
+        // Get all
         public ActionResult Index()
         {
             var movies = _context.Movies.Include(m => m.Genre).ToList();
         
             return View(movies);
-
         }
 
         public ActionResult Detail(int? id)
@@ -61,11 +43,54 @@ namespace Vidly.Controllers
             {
                 return HttpNotFound();
             }
-
             return View(movie);
         }
-        
-        
 
+        public ActionResult New()
+        {
+            var genres = _context.Genres.ToList();
+
+            var viewModel = new MovieFormViewModel
+            {
+                Genres = genres
+            };
+
+            return View("MovieForm", viewModel);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var genres = _context.Genres.ToList();
+
+            var viewModel = new MovieFormViewModel
+            {
+                Movie = _context.Movies.Single(c => c.ID == id),
+                Genres = genres
+            };
+
+            return View("MovieForm", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Save(Movie movie)
+        {
+            movie.DateAdded = DateTime.Now;
+
+            if (movie.ID == 0)
+            {
+                _context.Movies.Add(movie);
+            }
+            else
+            {
+                var movieInDB = _context.Movies.Single(m => m.ID == movie.ID);
+                movieInDB.Name = movie.Name;
+                movieInDB.ReleaseDate = movie.ReleaseDate;
+                movieInDB.NumberInStock = movie.NumberInStock;
+                movieInDB.GenreId = movie.GenreId;
+            }
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Movie");
+        }
     }
 }

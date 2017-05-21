@@ -193,14 +193,73 @@
     <Compile Include="Migrations\201705210846059_InitialModel.Designer.cs">
       <DependentUpon>201705210846059_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705210854359_AddIsSubscribedToCustomer.cs" />
+    <Compile Include="Migrations\201705210854359_AddIsSubscribedToCustomer.Designer.cs">
+      <DependentUpon>201705210854359_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705210857417_AddMembershipType.cs" />
+    <Compile Include="Migrations\201705210857417_AddMembershipType.Designer.cs">
+      <DependentUpon>201705210857417_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705210859076_PopulateMembershupTypes.cs" />
+    <Compile Include="Migrations\201705210859076_PopulateMembershupTypes.Designer.cs">
+      <DependentUpon>201705210859076_PopulateMembershupTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705210905309_AddAnnotationstoCustomerName.cs" />
+    <Compile Include="Migrations\201705210905309_AddAnnotationstoCustomerName.Designer.cs">
+      <DependentUpon>201705210905309_AddAnnotationstoCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705210946252_addNameToMembershipType.cs" />
+    <Compile Include="Migrations\201705210946252_addNameToMembershipType.Designer.cs">
+      <DependentUpon>201705210946252_addNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705210955051_populateDisplayName.cs" />
+    <Compile Include="Migrations\201705210955051_populateDisplayName.Designer.cs">
+      <DependentUpon>201705210955051_populateDisplayName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705211154343_addBirthdayToModel.cs" />
+    <Compile Include="Migrations\201705211154343_addBirthdayToModel.Designer.cs">
+      <DependentUpon>201705211154343_addBirthdayToModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705211225369_AddMoviesToDB.cs" />
+    <Compile Include="Migrations\201705211225369_AddMoviesToDB.Designer.cs">
+      <DependentUpon>201705211225369_AddMoviesToDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705211234136_AddGenresIn.cs" />
+    <Compile Include="Migrations\201705211234136_AddGenresIn.Designer.cs">
+      <DependentUpon>201705211234136_AddGenresIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705211234396_populateGenres.cs" />
+    <Compile Include="Migrations\201705211234396_populateGenres.Designer.cs">
+      <DependentUpon>201705211234396_populateGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705211238209_MovieDataAnnotations.cs" />
+    <Compile Include="Migrations\201705211238209_MovieDataAnnotations.Designer.cs">
+      <DependentUpon>201705211238209_MovieDataAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705211303185_AddPropertiesToMovie.cs" />
+    <Compile Include="Migrations\201705211303185_AddPropertiesToMovie.Designer.cs">
+      <DependentUpon>201705211303185_AddPropertiesToMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705211307109_NumberInStock.cs" />
+    <Compile Include="Migrations\201705211307109_NumberInStock.Designer.cs">
+      <DependentUpon>201705211307109_NumberInStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705211308295_AddDataAnnotations.cs" />
+    <Compile Include="Migrations\201705211308295_AddDataAnnotations.Designer.cs">
+      <DependentUpon>201705211308295_AddDataAnnotations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genres.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CustomerFormViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -211,19 +270,19 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Scripts\bootstrap.js" />
-    <Content Include="Models\Scripts\bootstrap.min.js" />
-    <None Include="Models\Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Models\Scripts\jquery-1.10.2.js" />
-    <Content Include="Models\Scripts\jquery-1.10.2.min.js" />
-    <None Include="Models\Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Models\Scripts\jquery.validate.js" />
-    <Content Include="Models\Scripts\jquery.validate.min.js" />
-    <Content Include="Models\Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Models\Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Models\Scripts\modernizr-2.6.2.js" />
-    <Content Include="Models\Scripts\respond.js" />
-    <Content Include="Models\Scripts\respond.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -261,6 +320,8 @@
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Movie\detail.cshtml" />
+    <Content Include="Views\Customer\CustomerForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -278,11 +339,53 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705210846059_InitialModel.resx">
       <DependentUpon>201705210846059_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705210854359_AddIsSubscribedToCustomer.resx">
+      <DependentUpon>201705210854359_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705210857417_AddMembershipType.resx">
+      <DependentUpon>201705210857417_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705210859076_PopulateMembershupTypes.resx">
+      <DependentUpon>201705210859076_PopulateMembershupTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705210905309_AddAnnotationstoCustomerName.resx">
+      <DependentUpon>201705210905309_AddAnnotationstoCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705210946252_addNameToMembershipType.resx">
+      <DependentUpon>201705210946252_addNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705210955051_populateDisplayName.resx">
+      <DependentUpon>201705210955051_populateDisplayName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705211154343_addBirthdayToModel.resx">
+      <DependentUpon>201705211154343_addBirthdayToModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705211225369_AddMoviesToDB.resx">
+      <DependentUpon>201705211225369_AddMoviesToDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705211234136_AddGenresIn.resx">
+      <DependentUpon>201705211234136_AddGenresIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705211234396_populateGenres.resx">
+      <DependentUpon>201705211234396_populateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705211238209_MovieDataAnnotations.resx">
+      <DependentUpon>201705211238209_MovieDataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705211303185_AddPropertiesToMovie.resx">
+      <DependentUpon>201705211303185_AddPropertiesToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705211307109_NumberInStock.resx">
+      <DependentUpon>201705211307109_NumberInStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705211308295_AddDataAnnotations.resx">
+      <DependentUpon>201705211308295_AddDataAnnotations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

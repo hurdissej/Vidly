@@ -1,4 +1,5 @@
-﻿@model Vidly.Models.Customer
+﻿@using Vidly.Models
+@model Vidly.Models.Customer
     
 @{
     ViewBag.Title = "Random";
@@ -6,3 +7,13 @@
 }
 
 <h1> @Model.Name</h1>
+
+<ul>
+    <li> <b> Membership Type:  </b> @Model.MembershipType.DisplayName </li>
+    
+    @if (@Model.DateOfBirth.HasValue)
+    {
+        <li> <b>Date Of Birth:</b> @Model.DateOfBirth.Value.ToShortDateString() </li>  
+    }
+
+</ul>

@@ -273,6 +273,14 @@
     <Compile Include="Migrations\201705211540099_TweakDBName.Designer.cs">
       <DependentUpon>201705211540099_TweakDBName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705231640323_SeedUsers.cs" />
+    <Compile Include="Migrations\201705231640323_SeedUsers.Designer.cs">
+      <DependentUpon>201705231640323_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705231653440_SeedMethodsAgain.cs" />
+    <Compile Include="Migrations\201705231653440_SeedMethodsAgain.Designer.cs">
+      <DependentUpon>201705231653440_SeedMethodsAgain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -524,6 +532,7 @@
     <Content Include="Views\Movie\detail.cshtml" />
     <Content Include="Views\Customer\CustomerForm.cshtml" />
     <Content Include="Views\Movie\MovieForm.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -591,6 +600,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705211540099_TweakDBName.resx">
       <DependentUpon>201705211540099_TweakDBName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231640323_SeedUsers.resx">
+      <DependentUpon>201705231640323_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231653440_SeedMethodsAgain.resx">
+      <DependentUpon>201705231653440_SeedMethodsAgain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

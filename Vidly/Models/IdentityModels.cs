@@ -14,6 +14,11 @@ namespace Empty.Models
         [Required]
         [StringLength(255)]
         public string DrivingLicense { get; set; }
+
+        [Required]
+        [StringLength(55)]
+        public string Phone { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

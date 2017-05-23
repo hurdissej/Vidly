@@ -55,7 +55,7 @@ namespace Empty
             //   consumerSecret: "");
 
             //app.UseFacebookAuthentication(
-            //   appId: "",
+            //   appId: "529823664075070",
             //   appSecret: "");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()

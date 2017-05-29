@@ -37,7 +37,7 @@ namespace Vidly.Controllers
 
         public ActionResult Detail(int? id)
         {
-            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.ID  == id);
+            var movie = _context.Movie.Include(m => m.Genre).SingleOrDefault(m => m.ID  == id);
 
             if (movie == null)
             {
@@ -63,7 +63,7 @@ namespace Vidly.Controllers
         public ActionResult Edit(int id)
         {
             var genres = _context.Genres.ToList();
-            var movie = _context.Movies.SingleOrDefault(c => c.ID == id);
+            var movie = _context.Movie.SingleOrDefault(c => c.ID == id);
 
             var viewModel = new MovieFormViewModel (movie)
             {
@@ -92,11 +92,11 @@ namespace Vidly.Controllers
 
             if (movie.ID == 0)
             {
-                _context.Movies.Add(movie);
+                _context.Movie.Add(movie);
             }
             else
             {
-                var movieInDB = _context.Movies.Single(m => m.ID == movie.ID);
+                var movieInDB = _context.Movie.Single(m => m.ID == movie.ID);
                 movieInDB.Name = movie.Name;
                 movieInDB.ReleaseDate = movie.ReleaseDate;
                 movieInDB.NumberInStock = movie.NumberInStock;

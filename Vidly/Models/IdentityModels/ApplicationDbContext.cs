@@ -6,11 +6,11 @@ namespace Empty.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Movie> Movies { get; set; }
+        public DbSet<Movie> Movie { get; set; }
         public DbSet<Genres> Genres { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<MembershipType> MembershipTypes { get; set; }
-        public DbSet<Rentals> Rentals { get; set; }
+        public DbSet<Rental> Rentals { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

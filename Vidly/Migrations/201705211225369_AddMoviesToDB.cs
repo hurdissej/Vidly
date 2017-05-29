@@ -8,7 +8,7 @@ namespace Vidly.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Movies",
+                "dbo.Movie",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
@@ -21,7 +21,7 @@ namespace Vidly.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.Movies");
+            DropTable("dbo.Movie");
         }
     }
 }

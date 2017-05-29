@@ -7,14 +7,14 @@ namespace Vidly.Migrations
     {
         public override void Up()
         {
-            DropIndex("dbo.Movies", new[] { "GenreID" });
-            CreateIndex("dbo.Movies", "GenreId");
+            DropIndex("dbo.Movie", new[] { "GenreID" });
+            CreateIndex("dbo.Movie", "GenreId");
         }
         
         public override void Down()
         {
-            DropIndex("dbo.Movies", new[] { "GenreId" });
-            CreateIndex("dbo.Movies", "GenreID");
+            DropIndex("dbo.Movie", new[] { "GenreId" });
+            CreateIndex("dbo.Movie", "GenreID");
         }
     }
 }

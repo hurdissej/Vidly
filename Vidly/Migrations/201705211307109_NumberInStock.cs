@@ -7,12 +7,12 @@ namespace Vidly.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Movies", "NumberInStock", c => c.Int(nullable: false));
+            AddColumn("dbo.Movie", "NumberInStock", c => c.Int(nullable: false));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Movies", "NumberInStock");
+            DropColumn("dbo.Movie", "NumberInStock");
         }
     }
 }

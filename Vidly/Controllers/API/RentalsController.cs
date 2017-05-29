@@ -1,65 +1,69 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using AutoMapper;
 using Empty.Models;
 using Vidly.Dtos;
 using Vidly.Models;
 
-namespace Vidly.Controllers.API
+namespace Vidly.Controllers.Api
 {
-    public class RentalsController : ApiController
+    public class NewRentalsController : ApiController
     {
-
         private ApplicationDbContext _context;
-        
-        public RentalsController()
+
+        public NewRentalsController()
         {
             _context = new ApplicationDbContext();
         }
-
-        // POST api/Rentals
+        
         [HttpPost]
-        public IHttpActionResult Post(RentalDto newRental)
+        public IHttpActionResult CreateNewRentals(RentalDto newRental)
         {
-            var customer = _context.Customers.Single(c => c.Id == newRental.CustomerId);
+            var customer = _context.Customers.Single(
+                c => c.Id == newRental.CustomerId);
 
-           var movies = _context.Movies.Where(m => newRental.MovieId.Contains(m.ID));
-            
-            if (movies.Any())
-            {
-                return BadRequest("No movies with that ID available");
-            }
-            
+            var movies = _context.Movie.Where(
+                m => newRental.MovieIds.Contains(m.ID)).ToList();
+
             foreach (var movie in movies)
             {
+                if (movie.NumberAvailable == 0)
+                    return BadRequest("Movie is not available.");
 
-                if (movie.NumberAvailable > 0)
-                {
-                    var rental = new Rentals
-                    {
-                        Customer = customer,
-                        Movie = movie,
-                        DateRented = DateTime.Now,
-                    };
+                movie.NumberAvailable--;
 
-                    movie.NumberAvailable--;
-                    _context.Rentals.Add(rental);
-                }
-                else
+                var rental = new Rental
                 {
-                    return BadRequest("Movie is not available");
-                }
+                    Customer = customer,
+                    Movie = movie,
+                    DateRented = DateTime.Now
+                };
+
+                _context.Rentals.Add(rental);
             }
-
-            _context.SaveChanges();
-
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        // raise a new exception nesting
+                        // the current instance as InnerException
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
+            }
             return Ok();
-
         }
-        
+
     }
 }

@@ -19,7 +19,7 @@ namespace Vidly.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Customers", t => t.Customer_Id, cascadeDelete: true)
-                .ForeignKey("dbo.Movies", t => t.Movie_ID, cascadeDelete: true)
+                .ForeignKey("dbo.Movie", t => t.Movie_ID, cascadeDelete: true)
                 .Index(t => t.Customer_Id)
                 .Index(t => t.Movie_ID);
             
@@ -27,7 +27,7 @@ namespace Vidly.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Rentals", "Movie_ID", "dbo.Movies");
+            DropForeignKey("dbo.Rentals", "Movie_ID", "dbo.Movie");
             DropForeignKey("dbo.Rentals", "Customer_Id", "dbo.Customers");
             DropIndex("dbo.Rentals", new[] { "Movie_ID" });
             DropIndex("dbo.Rentals", new[] { "Customer_Id" });
